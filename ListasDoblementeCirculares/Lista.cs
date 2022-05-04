@@ -22,6 +22,21 @@ namespace ListasDoblementeCirculares
         {
             return (nodoInicial.nodoSiguiente == nodoInicial.nodoAnterior);
         }
-
+        public void Vaciar()
+        {
+            nodoInicial.nodoSiguiente = nodoInicial;
+            nodoInicial.nodoAnterior = nodoInicial;
+        }
+        public string RecorrerLista()
+        {
+            string datosLista = "";
+            nodoActual = nodoInicial;
+            while (nodoActual.nodoSiguiente != nodoInicial)
+            {
+                nodoActual = nodoActual.nodoSiguiente;
+                datosLista += $"{nodoActual.Valor}\n";
+            }
+            return datosLista;
+        }
     }
 }
