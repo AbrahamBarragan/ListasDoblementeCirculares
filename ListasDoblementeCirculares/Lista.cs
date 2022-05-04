@@ -45,9 +45,9 @@ namespace ListasDoblementeCirculares
             {
                 nodoActual = nodoActual.nodoSiguiente;
             }
-            Nodo nodoNuevo = new Nodo(dato);
+            Nodo nodoNuevo = new Nodo(dato, nodoActual, nodoInicial);
             nodoActual.nodoSiguiente = nodoNuevo;
-            nodoActual.nodoAnterior = nodoNuevo;
+            nodoInicial.nodoAnterior = nodoNuevo;
         }
         public Nodo Buscar(string dato)
         {
