@@ -83,5 +83,21 @@ namespace ListasDoblementeCirculares
            }
             return null;
         }
+        public void BorrarNodo(string dato)
+        {
+            if(ValidarVacio() == false)
+            {
+                nodoActual = Buscar(dato);
+                if (nodoActual != null)
+                {
+                    Nodo nodoAnterior = nodoActual.nodoAnterior;
+                    nodoAnterior.nodoSiguiente = nodoActual.nodoSiguiente;
+                    nodoActual.nodoSiguiente.nodoAnterior = nodoAnterior;
+                    nodoActual.nodoSiguiente = null;
+                    nodoActual.nodoAnterior = null;
+                    nodoActual.Valor = null;
+                }
+            }
+        }
     }
 }
