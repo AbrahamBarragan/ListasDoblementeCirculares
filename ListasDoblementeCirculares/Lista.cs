@@ -65,5 +65,23 @@ namespace ListasDoblementeCirculares
             }
             return null;
         }
+        public Nodo BuscarPorIndice(int indice)
+        {
+          int Indice = -1;
+           if (ValidarVacio() == false) 
+           {
+              Nodo nodoBusqueda = nodoInicial;
+              while (nodoBusqueda.nodoSiguiente != nodoInicial)
+              {
+                nodoBusqueda = nodoBusqueda.nodoSiguiente;
+                Indice++;
+                 if (Indice == indice)
+                 {
+                   return nodoBusqueda;
+                 }
+              }
+           }
+            return null;
+        }
     }
 }
