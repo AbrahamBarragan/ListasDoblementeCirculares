@@ -38,5 +38,32 @@ namespace ListasDoblementeCirculares
             }
             return datosLista;
         }
+        public void AgregarNodo(string dato)
+        {
+            nodoActual = nodoInicial;
+            while (nodoActual.nodoSiguiente != nodoInicial)
+            {
+                nodoActual = nodoActual.nodoSiguiente;
+            }
+            Nodo nodoNuevo = new Nodo(dato);
+            nodoActual.nodoSiguiente = nodoNuevo;
+            nodoActual.nodoAnterior = nodoNuevo;
+        }
+        public Nodo Buscar(string dato)
+        {
+            if (ValidarVacio() == false)
+            {
+                Nodo nodoBusqueda = nodoInicial;
+                while (nodoBusqueda.nodoSiguiente != nodoInicial)
+                {
+                    nodoBusqueda = nodoBusqueda.nodoSiguiente;
+                    if (nodoBusqueda.Valor == dato)
+                    {
+                        return nodoBusqueda;
+                    }
+                }
+            }
+            return null;
+        }
     }
 }
